@@ -1,4 +1,7 @@
 {
   "name": "",
-  "version": ""
+  "version": "",
+  "dependencies": {
+    "react-transition-group": "^2.3.0"
+  }
 }

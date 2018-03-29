@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Input from './components/Input';
 import './styles/styles.css';
 
 class App extends Component {
@@ -10,6 +10,7 @@ class App extends Component {
             <source src="assets/video/Two-Swimmers.mp4" type="video/mp4"/>Your browser does not support the video tag. I suggest you upgrade your browser.
             <source src="PATH_TO_WEBM" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
         </video>
+        <Input />
       </div>
     );
   }
