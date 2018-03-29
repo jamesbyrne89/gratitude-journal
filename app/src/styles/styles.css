@@ -3,6 +3,7 @@
   overflow: hidden;
   position: relative;
   color: #fff;
+  font-family: 'montserrat';
 }
 
 .App::before {
@@ -13,8 +14,9 @@
   left: 0;
   right: 0;
   width: 100%;
-  background-image: linear-gradient(-225deg, #22E1FF 0%, #1D8FE1 48%, #625EB1 100%);
-  opacity: 0.75;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#3b41c5), color-stop(49%, #a981bb), to(#ffc8a9));
+  background-image: linear-gradient(to top, #3b41c5 0%, #a981bb 49%, #ffc8a9 100%);
+  opacity: 0.85;
 }
 
 .App-logo {
@@ -76,6 +78,7 @@ video {
 
 .input__message {
   font-size: 3rem;
+  font-weight: 300;
 }
 
 .input__text {
@@ -88,4 +91,26 @@ video {
   font-size: 2rem;
   color: inherit;
   resize: none;
+  text-align: center;
+}
+
+.input__text:focus {
+  outline: none;
+  -webkit-box-shadow: 0 2px 10px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.5);
+}
+
+.fade {
+  -webkit-transition: ease-in 0.15s;
+  transition: ease-in 0.15s;
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, -webkit-transform;
+  transition-property: opacity, transform;
+  transition-property: opacity, transform, -webkit-transform;
+}
+
+.fade-leaving {
+  opacity: 0;
+  -webkit-transform: translateY(-10%);
+  transform: translateY(-10%);
 }
