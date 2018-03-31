@@ -38,37 +38,6 @@ function FadeOut({ children, duration, in: inProp }) {
       transform: 'translateY(-10%)'
     }
   }
-
-  // Wrap child node in <Transition />.
-  return (
-    <Transition in={inProp} timeout={{
-      // Set 'enter' timeout to '0' so that enter animation
-      // will start immediately.
-      enter: 0,
-
-      // Set 'exit' timeout to 'duration' so that the 'exited'
-      // status won't be applied until animation completes.
-      exit: duration
-    }}>
-      {
-        // Children is a function that receives the current
-        // status of the animation.
-        (status) => {
-          // Don't render anything if component has 'exited'.
-          if (status === 'exited') {
-            return null
-          }
-
-          // Apply different styles to children based
-          // on the current value of 'status'. 
-          const currentStyles = transitionStyles[status]
-          return React.cloneElement(children, {
-            style: Object.assign({}, defaultStyle, currentStyles)
-          })
-        }
-      }
-    </Transition>
-  )
 }
 
 class Input extends Component {
