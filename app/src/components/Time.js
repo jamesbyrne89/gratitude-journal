@@ -33,7 +33,7 @@ const Time = () => {
 
     return (
 
-        <time className="time">{days[new Date().getDay()]} {new Date().getDate()} {months[new Date().getMonth()]}</time>
+        <time className="time">{days[new Date().getDay() - 1]} {new Date().getDate()} {months[new Date().getMonth()]}</time>
 
     );
 }

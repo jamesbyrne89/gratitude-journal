@@ -7,7 +7,7 @@ import '../styles/styles.css';
 // 'children' is the element to be animated.
 // 'duration' is the duration of the animation in milliseconds.
 // The `in` prop will be provided by <TransitionGroup />. 
-function FadeOut ({children, duration, in: inProp}) {
+function FadeOut({ children, duration, in: inProp }) {
   // Styles to set on children which are necessary in order
   // for the animation to work.
   const defaultStyle = {
@@ -106,22 +106,22 @@ class Input extends Component {
   // }
 
   submitInput(e) {
-  
+
     if (e.keyCode === 13 && this.userInput.value !== '') {
       console.log('enter')
-    this.props.enterInput();
-    this.userInput.value = '';
+      this.props.enterInput();
+      this.userInput.value = '';
     }
   }
 
 
   render() {
-    
+
     return (
-    
+
       <div className="input">
-        <h1 className="input__message">What are you grateful for today?</h1>
-        <input ref={(input) => { this.userInput = input; }} className="input__text" type="text" onKeyUp={this.submitInput} autoFocus /> 
+        <h1 className="input__message"></h1>
+        <input ref={(input) => { this.userInput = input; }} className="input__text" placeholder="What are you grateful for today?" type="text" onKeyUp={this.submitInput} autoFocus />
 
       </div>
 
