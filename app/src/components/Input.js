@@ -14,9 +14,7 @@ class Input extends Component {
     super(props)
     this.submitInput = this.submitInput.bind(this);
     const input = this.userInput;
-    this.state = {
-      hasInput: false
-    }
+
   }
 
   // const userInputArea = this.refs.userInputArea;
@@ -49,9 +47,7 @@ class Input extends Component {
   submitInput(e) {
 
     if (e.keyCode === 13 && this.userInput.value !== '') {
-      console.log('enter')
-      this.setState({ hasInput: true });
-      // this.props.enterInput();
+      this.props.enterInput();
       this.userInput.value = '';
     }
   }
@@ -59,7 +55,8 @@ class Input extends Component {
 
   render() {
 
-    const { hasInput } = this.state;
+    const { hasInput } = this.props;
+    console.log(this.props)
 
     return (
       <CSSTransition in={!hasInput} {...fade}>

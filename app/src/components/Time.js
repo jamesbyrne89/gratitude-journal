@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import { Transition, TransitionGroup } from 'react-transition-group';
+import React from 'react';
 import '../styles/styles.css';
 
 const days = [

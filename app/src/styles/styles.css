@@ -4,8 +4,8 @@
 
 .fade-appear-active {
   opacity: 0;
-  -webkit-transition: opacity .5s ease-in;
-  transition: opacity .5s ease-in;
+  -webkit-transition: opacity 300ms ease-in-out;
+  transition: opacity 300ms ease-in-out;
 }
 
 .fade-enter {
@@ -14,8 +14,8 @@
 
 .fade-enter-active {
   opacity: 1;
-  -webkit-transition: opacity 500ms ease-in;
-  transition: opacity 500ms ease-in;
+  -webkit-transition: opacity 300ms ease-in-out;
+  transition: opacity 300ms ease-in-out;
 }
 
 .fade-exit {
@@ -24,8 +24,23 @@
 
 .fade-exit-done {
   opacity: 0;
-  -webkit-transition: opacity 300ms ease-in;
-  transition: opacity 300ms ease-in;
+  -webkit-transition: opacity 300ms ease-in-out;
+  transition: opacity 300ms ease-in-out;
+}
+
+.journal-log {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.journal-log__entry {
+  border: 1px solid #fff;
+  padding: 1em;
 }
 
 .App {
@@ -33,7 +48,7 @@
   overflow: hidden;
   position: relative;
   color: #fff;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   height: 100vh;
   overflow: hidden;
 }
