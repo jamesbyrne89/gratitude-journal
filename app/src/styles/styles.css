@@ -3,7 +3,7 @@
   overflow: hidden;
   position: relative;
   color: #fff;
-  font-family: 'lato';
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 .App::before {
@@ -68,7 +68,7 @@ video {
 
 .input {
   position: absolute;
-  top: 20%;
+  top: 25%;
   right: 0;
   left: 0;
   bottom: 0;
@@ -140,5 +140,4 @@ video {
   right: 40px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-family: 'roboto';
 }
