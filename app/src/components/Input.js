@@ -1,43 +1,12 @@
 import React, { Component } from 'react';
-import { Transition, TransitionGroup } from 'react-transition-group';
+import { CSSTransition } from 'react-transition-group';
 import '../styles/styles.css';
 
-// <FadeOut /> is a component that wraps children in 
-// a <Transition /> component. 
-// 'children' is the element to be animated.
-// 'duration' is the duration of the animation in milliseconds.
-// The `in` prop will be provided by <TransitionGroup />. 
-function FadeOut({ children, duration, in: inProp }) {
-  // Styles to set on children which are necessary in order
-  // for the animation to work.
-  const defaultStyle = {
-    // Transition "opacity" and "transform" CSS properties.
-    // Set duration of the transition to the duration of the animation.
-    transition: `${duration}ms ease-in`,
-    transitionProperty: 'opacity, transform'
-  }
 
-  // Styles that will be applied to children as the status
-  // of the transition changes. Each key of the
-  // 'transitionStyles' object matches the name of a 
-  // 'status' provided by <Transition />. 
-  const transitionStyles = {
-    // Start with component invisible and shifted up by 10%
-    entering: {
-      opacity: 0,
-      transform: 'translateY(-10%)'
-    },
-    // Transition to component being visible and having its position reset. 
-    entered: {
-      opacity: 1,
-      transform: 'translateY(0)'
-    },
-    // Fade element out and slide it back up on exit.
-    exiting: {
-      opacity: 0,
-      transform: 'translateY(-10%)'
-    }
-  }
+const fade = {
+  timeout: 300,
+  classNames: 'fade',
+  unmountOnExit: false
 }
 
 class Input extends Component {
@@ -45,6 +14,9 @@ class Input extends Component {
     super(props)
     this.submitInput = this.submitInput.bind(this);
     const input = this.userInput;
+    this.state = {
+      hasInput: false
+    }
   }
 
   // const userInputArea = this.refs.userInputArea;
@@ -78,7 +50,8 @@ class Input extends Component {
 
     if (e.keyCode === 13 && this.userInput.value !== '') {
       console.log('enter')
-      this.props.enterInput();
+      this.setState({ hasInput: true });
+      // this.props.enterInput();
       this.userInput.value = '';
     }
   }
@@ -86,15 +59,17 @@ class Input extends Component {
 
   render() {
 
+    const { hasInput } = this.state;
+
     return (
+      <CSSTransition in={!hasInput} {...fade}>
+        <div className="input">
+          <h1 className="input__message"></h1>
+          <input ref={(input) => { this.userInput = input; }} className="input__text" placeholder="What are you grateful for today?" type="text" onKeyUp={this.submitInput} autoFocus />
 
-      <div className="input">
-        <h1 className="input__message"></h1>
-        <input ref={(input) => { this.userInput = input; }} className="input__text" placeholder="What are you grateful for today?" type="text" onKeyUp={this.submitInput} autoFocus />
-
-      </div>
-
-    );
+        </div>
+      </CSSTransition>
+    )
   }
 }
 
