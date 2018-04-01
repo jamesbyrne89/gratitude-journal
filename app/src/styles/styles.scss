@@ -1,5 +1,10 @@
 @import './_animations';
 @import './_log';
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 .App {
     text-align: center;
     overflow: hidden;
@@ -79,24 +84,27 @@ video {
     left: 0;
     bottom: 0;
     margin: auto;
-    width: 46.5rem;
+    width: 39rem;
 }
 
 .input__message {
     font-size: 3rem;
     font-weight: 300;
+    text-align: center;
 }
 
 .input__text {
     background: none;
-    border: 0; // border-bottom: 2px solid #fff;
+    border: 2px solid #fff;
+    border-radius: 4px;
     width: 100%;
     height: 2em;
     margin-top: 1rem;
-    font-size: 2rem;
+    font-size: 1.25rem;
     color: inherit;
     resize: none;
     text-align: center;
+    padding: 1.25em 1em;
 }
 
 .input__text:focus {
@@ -107,22 +115,20 @@ video {
 
 .input__text::-webkit-input-placeholder {
     color: #fff;
-    font-weight: 400;
-    font-family: 'lato';
+    opacity: 0.5;
+    font-family: inherit;
 }
 
 .input__text:-ms-input-placeholder {
     color: #fff;
-    font-size: 1.5em;
-    font-weight: 400;
-    font-family: 'lato';
+    opacity: 0.5;
+    font-family: inherit;
 }
 
 .input__text::placeholder {
     color: #fff;
-    font-size: 1.5em;
-    font-weight: 400;
-    font-family: 'lato';
+    opacity: 0.5;
+    font-family: inherit;
 }
 
 .fade {

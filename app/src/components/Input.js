@@ -56,13 +56,13 @@ class Input extends Component {
   render() {
 
     const { hasInput } = this.props;
-    console.log(this.props)
+
 
     return (
       <CSSTransition in={!hasInput} {...fade}>
         <div className="input">
-          <h1 className="input__message"></h1>
-          <input ref={(input) => { this.userInput = input; }} className="input__text" placeholder="What are you grateful for today?" type="text" onKeyUp={this.submitInput} autoFocus />
+          <h1 className="input__message">What are you grateful for today?</h1>
+          <input ref={(input) => { this.userInput = input; }} className="input__text" placeholder="Type something..." type="text" onKeyUp={this.submitInput} autoFocus />
 
         </div>
       </CSSTransition>
